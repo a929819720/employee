@@ -57,6 +57,13 @@ public class EmployeeController extends BaseController {
 		return success(empVo);
 	}
 	@EmpAuthority
+	@RequestMapping("deleteEmployee")
+	public ControllerResult deleteEmployee() throws ControllerException{
+		Integer id=getParamNotInteger("id");
+		empService.delEmployeeByEmpId(id);
+		return success();
+	}
+	@EmpAuthority
 	@GetMapping("getEmployeeByRole")
 	public ControllerResult getEmployeeByRole(Integer pageNum) throws ControllerException{
 		if(pageNum==null)pageNum=1;

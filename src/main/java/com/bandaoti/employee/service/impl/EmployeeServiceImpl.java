@@ -140,4 +140,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return new PageInfo<Employee>(emps);
 	}
 
+	@Override
+	public Boolean delEmployeeByEmpId(Integer id) {
+		empMapper.deleteByPrimaryKey(id);
+		return true;
+	}
+
 }

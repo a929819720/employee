@@ -1,6 +1,6 @@
 <div>
 	<ul class="nav nav-tabs">
-		<li ng-class="tag=='role'?'active':''"><a href="#home/role" data-toggle="tab"> 角色管理 </a></li>
+		<li ng-class="tag=='role'?'active':''"><a href="#home/role" data-toggle="tab"> 角色申请 </a></li>
 		<li ng-class="tag=='emp'?'active':''"><a href="#home/emp" data-toggle="tab">员工管理</a></li>
 	</ul>
 	<div class="tab-content">
@@ -20,8 +20,7 @@
 							<td>{{$index+1}}</td>
 							<td>{{role.code}}</td>
 							<td>{{role.name}}</td>
-							<td><button class="btn" ng-click="reqRole(role)"
-									ng-disabled="(role.code=='admin') || (role.myStatus==1) || (role.myStatus==2) ">{{role.btnTitle}}</button></td>
+							<td><button class="btn" ng-click="reqRole(role)">{{role.btnTitle}}</button></td>
 						</tr>
 					</tbody>
 					<tfoot ng-hide="isLastPage">
@@ -46,7 +45,7 @@
 							<td>{{$index+1}}</td>
 							<td>{{emp.code}}</td>
 							<td>{{emp.name}}</td>
-							<td><button class="btn" ng-click="delEmp(emp)" ng-disabled="!isAdmin">{{role.btnTitle}}</button></td>
+							<td><button class="btn" ng-click="delEmp(emp)" ng-disabled="!true">删除</button></td>
 						</tr>
 					</tbody>
 					<tfoot ng-hide="isLastPage">

@@ -11,6 +11,7 @@ public interface EmployeeService {
 	Boolean delEmployeeByMobile(String mobile);
 	Boolean delEmployeeByIdcard(String idCard);
 	Boolean delEmployeeByEmail(String email);
+	Boolean delEmployeeByEmpId(Integer id);
 	default EmployeeType delEmployee(String mobileOrIdcardOrEmail){
 		if(delEmployeeByMobile(mobileOrIdcardOrEmail)){
 			return EmployeeType.MOBILE;
